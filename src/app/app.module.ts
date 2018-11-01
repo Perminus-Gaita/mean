@@ -75,6 +75,11 @@ By convention, the root module should always be named AppModule.
     AdminModule,
     AppRoutingModule,
   ],
+  /*
+  Be aware that this method of defining a service in the providers property 
+  should only be used in the root module. Doing this in a feature module is 
+  going to cause unintended consequences when working with lazy loaded modules.
+  */
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthHeaderInterceptor,
