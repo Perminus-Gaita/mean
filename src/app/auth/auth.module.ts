@@ -44,6 +44,17 @@ it's being used in the template of the AppComponent.
     LoginComponent,
     RegisterComponent
   ],
+  /*
+  Here's the tricky part of Angular modules. While components, pipes and 
+  directives are scoped to its modules unless explicitly exported, services
+  are globally available unless the module is lazy loaded.
+  
+  Notice that the two services below are not in the exports array but in the 
+  providers array. With this configuration, our service is going to be 
+  available everywhere, even in the AppComponent which lives in another module.
+  So, even when using modules, there's no way to have a "private" service unless... 
+  the module is being lazy loaded.
+  */
   providers: [
     AuthService,
     TokenStorage
