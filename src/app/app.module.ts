@@ -16,6 +16,16 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 
+/*
+The property imports expects an array of modules.
+Here's where we define the pieces of our puzzle (our application). 
+The property declarations expects an array of components,
+directives and pipes that are part of the module. 
+The bootstrap property is where we define the root component of our module. 
+Even though this property is also an array, 
+99% of the time we are going to define only one component.
+*/
+
 @NgModule({
   declarations: [
     AppComponent,
