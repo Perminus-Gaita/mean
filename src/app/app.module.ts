@@ -26,6 +26,15 @@ Even though this property is also an array,
 99% of the time we are going to define only one component.
 */
 
+/*
+The first thing that we notice is that our module is importing 
+the BrowserModule as an explicit dependency. The BrowserModule is 
+a built-in module that exports basic directives, pipes and services. 
+Unlike previous versions of Angular, we have to explicitly import 
+those dependencies to be able to use directives like *ngFor or *ngIf 
+in our templates.
+*/
+
 @NgModule({
   declarations: [
     AppComponent,
