@@ -35,6 +35,13 @@ those dependencies to be able to use directives like *ngFor or *ngIf
 in our templates.
 */
 
+/*
+Given that the root component of our module is the AppComponent
+we have to list it in the bootstrap array. Because in the declarations 
+property we are supposed to define all the components or pipes that make up 
+our application, we have to define the AppComponent again there too.
+*/
+
 @NgModule({
   declarations: [
     AppComponent,
