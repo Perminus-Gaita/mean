@@ -28,6 +28,10 @@ it's being used to direct links to certain paths.
 When a module is lazy loaded, Angular is going to create a child injector
 (which is a child of the root injector from the root module) and will 
 create an instance of our service there.
+
+As a rule of thumb, always use the forRoot syntax when exporting services 
+from feature modules, unless you have a very special need that requires 
+multiple instances at different levels of the dependency injection tree.
 */
 
 @NgModule({
