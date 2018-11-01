@@ -42,6 +42,23 @@ property we are supposed to define all the components or pipes that make up
 our application, we have to define the AppComponent again there too.
 */
 
+/* 
+There are two types of modules, root modules and feature modules.
+In the same way that in a module we have one root component and 
+many possible secondary components, in an application we only have 
+one root module and zero or many feature modules. To be able to bootstrap 
+our application, Angular needs to know which one is the root module. 
+An easy way to identify a root module is by looking at the imports property 
+of its NgModule decorator. If the module is importing the BrowserModule 
+then it's a root module, if instead is importing the CommonModule then 
+it is a feature module.+
+We need to take care of importing the BrowserModule in the root module and 
+instead, import the CommonModule in any other module we create for the same
+application. Failing to do so might result in problems when working with 
+lazy loaded modules as we are going to see in following sections.
+By convention, the root module should always be named AppModule.
+*/
+
 @NgModule({
   declarations: [
     AppComponent,
