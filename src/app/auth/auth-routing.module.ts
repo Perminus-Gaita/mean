@@ -35,6 +35,11 @@ multiple instances at different levels of the dependency injection tree.
 */
 
 @NgModule({
+  /*
+  Angular creates a lazy-loaded module with its own injector, a child of 
+  the root injector… So a lazy-loaded module that imports that shared module 
+  makes its own copy of the service.
+*/
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
