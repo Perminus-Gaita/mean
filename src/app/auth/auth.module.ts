@@ -54,6 +54,10 @@ it's being used in the template of the AppComponent.
   available everywhere, even in the AppComponent which lives in another module.
   So, even when using modules, there's no way to have a "private" service unless... 
   the module is being lazy loaded.
+  
+  Dependency injection is the practice of passing in the object’s collaborators 
+  (the code objects that our object depends on) into it, rather than creating 
+  them inside the object.
   */
   providers: [
     AuthService,
