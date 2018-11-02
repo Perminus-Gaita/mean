@@ -108,6 +108,8 @@ The Angular-Dependency Framework provides several types of providers:
     Value Provider
     Factory Provider
     Aliased Class Provider
+    
+from: https://www.tektutorialshub.com/angular-providers/
     */
   entryComponents: [],
   bootstrap: [AppComponent]
