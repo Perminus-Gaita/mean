@@ -110,6 +110,10 @@ The Angular-Dependency Framework provides several types of providers:
     Aliased Class Provider
     
 from: https://www.tektutorialshub.com/angular-providers/
+
+
+Dependency injection is the practice of passing in the object’s collaborators 
+(the code objects that our object depends on) into it, rather than creating them inside the object.
     */
   entryComponents: [],
   bootstrap: [AppComponent]
