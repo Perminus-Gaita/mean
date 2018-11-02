@@ -89,6 +89,26 @@ By convention, the root module should always be named AppModule.
     useClass: CatchErrorInterceptor,
     multi: true,
   }],
+  /*
+  Configuring the Provider
+We register our services using the Providers arrays as shown above,
+>>> providers: [ProductService]
+The above is an actual shorthand notation for the following syntax,
+providers :[{ provide: ProductService, useClass: ProductService }]
+ 
+The above syntax has two properties.
+Token: The First property Provide is known as the Token. The token is used by the injector to locate the provider
+Provider: The second property useClass is Provider. It tells how and what to inject.
+
+The injector maintains an internal collection of token-provider map. 
+The token acts as a key to that collection. Injector uses the Token (key) to locate the provider.
+
+The Angular-Dependency Framework provides several types of providers:
+    Class Provider
+    Value Provider
+    Factory Provider
+    Aliased Class Provider
+    */
   entryComponents: [],
   bootstrap: [AppComponent]
 })
