@@ -18,6 +18,16 @@ constructor's parameters. Without it,
 The metadata generated helps Angular know the type.
 
 Decorators add metadata to our code.
+
+@Injectable() lets Angular know that a class can be used with the dependency injector. 
+@Injectable() is not strictly required if the class has other Angular decorators on it 
+or does not have any dependencies. What is important is that any class that is going to 
+be injected with Angular is decorated. However, best practice is to decorate injectables 
+with @Injectable(), as it makes more sense to the reader.
+
+In the code below Angular's injector determines what to inject into AuthService's constructor 
+by using type information. This is possible because these particular dependencies are typed, 
+and are not primitive types. In some cases Angular's DI needs more information than just types.
 */
 export class AuthService {
 
