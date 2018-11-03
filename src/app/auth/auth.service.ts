@@ -7,6 +7,18 @@ import { TokenStorage } from './token.storage';
 import { TooltipComponent } from '@angular/material';
 
 @Injectable()
+/*
+@Injectable is normally used for Dart metadata generation. The metadata generated
+makes it possible for the AuthService class to be able to use other services in it's
+constructor's parameters. Without it, 
+          Angular will basically say that it can’t resolve 
+          the Http dependency of AuthService because Angular 
+          doesn’t know the type and therefore, 
+          no provider that can be used to resolve the dependency. 
+The metadata generated helps Angular know the type.
+
+Decorators add metadata to our code.
+*/
 export class AuthService {
 
   constructor(private http : HttpClient, private token: TokenStorage) {}
@@ -16,7 +28,7 @@ export class AuthService {
   login(email : string, password : string) : Observable <any> {
     return Observable.create(observer => {
       this.http.post('/api/auth/login', {
-        email,
+        email, 
         password
       }).subscribe((data : any) => {
           observer.next({user: data.user});
