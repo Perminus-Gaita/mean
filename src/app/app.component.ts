@@ -36,6 +36,11 @@ no matter if they have an implementation or not in OnInit.
 Also there are no calls to super methods in AppComponent
 */
 export class AppComponent implements OnInit {
+/*
+Variables declared within a method are "local variables"
+Variables declared within the class not within any methods are "member variables"(global variables).
+Variables declared within the class not within any methods and defined as static are "class variables"
+*/
 
   private userSubscription: Subscription;
   public user: any;
