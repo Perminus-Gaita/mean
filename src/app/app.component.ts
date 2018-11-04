@@ -7,7 +7,11 @@ import { DomSanitizer } from "@angular/platform-browser";
 
 import { AuthService } from './auth/auth.service';
 import * as schema from './schema/equipment.json';
-
+/*
+The @Component annotation helps provide metadata to Angular
+that tells Angular the class is a component among other data 
+as seen in the object passed as a parameter
+*/
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
