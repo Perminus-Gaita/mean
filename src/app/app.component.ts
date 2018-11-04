@@ -17,6 +17,24 @@ as seen in the object passed as a parameter
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
+/*
+extends means:
+The new class is a child. It gets benefits coming with inheritance. 
+It has all properties, methods as its parent. It can override some of 
+these and implement new, but the parent stuff is already included.
+
+implements means:
+The new class can be treated as the same "shape", while it is not a child. 
+It could be passed to any method where the Person is required, 
+regardless of having different parent than Person
+
+In the code below:
+The implements keyword treats the OnInit class as an interface, 
+that means AppComponent has to implement all the methods defined in OnInit, 
+no matter if they have an implementation or not in OnInit. 
+Also there are no calls to super methods in AppComponent
+*/
 export class AppComponent implements OnInit {
 
   private userSubscription: Subscription;
