@@ -49,7 +49,15 @@ Variables declared within the class not within any methods and defined as static
 
   private userSubscription: Subscription;
   public user: any;
+  
+/*
+Whenever the html template is accessing something from the from the component it checks the
+member/global variables by default.
 
+You can only declare member/global variables directly in the class e.g 'userSubscription' and 'user'
+Assigning values can be done only inside a method, like a constructor, for example.
+*/
+  
   constructor(
     private authService: AuthService,
     private router: Router,
