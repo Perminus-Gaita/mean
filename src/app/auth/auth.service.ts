@@ -2,6 +2,16 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+/*
+RxJs is a library for reactive programming using Observables, 
+to make it easier to compose asynchronous or callback based code
+
+Obsevables allow and offer operators to be used with the data.
+Operators allow you to transform how data is handled, used or looks like.
+The biggest advantage with observables is the funnel like approach that 
+make it very easy to write structured statements handling asynchronous code and 
+the operators we can use in that funnel to transform the data.
+*/
 
 import { TokenStorage } from './token.storage';
 import { TooltipComponent } from '@angular/material';
