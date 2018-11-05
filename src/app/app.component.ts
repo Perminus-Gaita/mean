@@ -34,6 +34,11 @@ The implements keyword treats the OnInit class as an interface,
 that means AppComponent has to implement all the methods defined in OnInit, 
 no matter if they have an implementation or not in OnInit. 
 Also there are no calls to super methods in AppComponent
+
+           STRING INTERPOLATION
+In computer programming, string interpolation is the process of evaluating a 
+string literal containing one or more placeholders, yielding a result in which 
+the placeholders are replaced with their corresponding values.
 */
 export class AppComponent implements OnInit {
 /*
