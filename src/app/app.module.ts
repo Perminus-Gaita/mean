@@ -79,6 +79,13 @@ By convention, the root module should always be named AppModule.
   Be aware that this method of defining a service in the providers property 
   should only be used in the root module. Doing this in a feature module is 
   going to cause unintended consequences when working with lazy loaded modules.
+  
+            Service Injection Context
+The list of services available to all components in your application. It is a shared
+space where all the components can access the services available as long as they are
+somehow imported into the root module either through the providers property or imported module.
+Lazy loading adds more injection contexts.
+*/
   */
   providers: [{
     provide: HTTP_INTERCEPTORS,
