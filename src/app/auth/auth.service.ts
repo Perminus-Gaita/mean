@@ -60,6 +60,10 @@ The only difference being you can't send values to an observable using next() me
 In Angular services, I would use BehaviorSubject for a data service as an angular service often 
 initializes before component and behavior subject ensures that the component consuming the service 
 receives the last updated data even if there are no new updates since the component's subscription to this data.
+
+The second example is a regular subject which receives a value right before the subscription is called. 
+In regular subjects, the subscription is only triggered for values received after subscription is called. 
+Since a is received right before subscription, it is not sent to the subscription.
 */
 
 /*
