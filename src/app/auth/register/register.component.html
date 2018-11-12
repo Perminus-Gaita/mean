@@ -41,5 +41,8 @@
   <mat-card-actions>
     <button mat-raised-button (click)="register()" color="primary">Register</button>
     <span>Allrady have an account ? <a [routerLink]="['/auth/login']">login</a> here</span>
+    <!--The '[routerLink]' directive is used to tell angular to change the route and prevents the browser from loading a new page
+     since its a SPA(Single Page Application)
+     -->
   </mat-card-actions>
 </mat-card>
