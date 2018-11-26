@@ -50,4 +50,16 @@ artificial server response.
 
 This is a common middleware pattern found in frameworks such as Express.js.
 
+>>HTTP HEADERS
+HTTP headers allow the client and the server to pass additional information with the request or the response. 
+An HTTP header consists of its case-insensitive name followed by a colon ':', then by its value (without line breaks). 
+Leading white space before the value is ignored.
+
+>>Headers can be grouped according to their contexts:
+General header: Headers applying to both requests and responses but with no relation to the data eventually transmitted in the body.
+Request header: Headers containing more information about the resource to be fetched or about the client itself.
+Response header: Headers with additional information about the response, like its location or about the server itself 
+                (name and version etc.).
+Entity header: Headers containing more information about the body of the entity, like its content length or its MIME-type.
+
 */
