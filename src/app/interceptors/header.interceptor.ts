@@ -28,4 +28,26 @@ Or you could automatically intercept and append the header before sending the re
 
 Another use case scenario is handling errors and caching of content. 
 You can use an interceptor to catch errors and log them or serve cached content to the user instead of getting content from the server.
+
+
+To implement an interceptor, declare a class that implements the intercept() method of the HttpInterceptor interface.
+The intercept method transforms a request into an Observable that eventually returns the HTTP response. 
+In this sense, each interceptor is fully capable of handling the request entirely by itself.
+
+Most interceptors inspect the request on the way in and forward the (perhaps altered) request to the handle() method 
+of the next object which implements the HttpHandler interface.
+
+Like intercept(), the handle() method transforms an HTTP request into an Observable of HttpEvents which ultimately include 
+the server's response. The intercept() method could inspect that observable and alter it before returning it to the caller.
+
+>>The next object
+The next object represents the next interceptor in the chain of interceptors. The final next in the chain is the HttpClient 
+backend handler that sends the request to the server and receives the server's response.
+
+Most interceptors call next.handle() so that the request flows through to the next interceptor and, eventually, the backend 
+handler. An interceptor could skip calling next.handle(), short-circuit the chain, and return its own Observable with an 
+artificial server response.
+
+This is a common middleware pattern found in frameworks such as Express.js.
+
 */
