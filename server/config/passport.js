@@ -36,3 +36,10 @@ passport.use(jwtLogin);
 passport.use(localLogin);
 
 module.exports = passport;
+
+
+/*
+The purpose of passport.session middleware is to deserialize user object from session using  passport.deserializeUser function 
+(that you define in your passport configuration). When user first authenticates itself, its user object is serialized and stored 
+in the session. On each following request, the middleware deserialize the user and populates req.user object.
+*/
