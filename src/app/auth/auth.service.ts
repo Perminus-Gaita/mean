@@ -143,6 +143,10 @@ export class AuthService {
     if (user) user.isAdmin = (user.roles.indexOf('admin') > -1);
     this.$userSource.next(user);
     (<any>window).user = user;
+    /*
+    The indexOf() method returns the position of the first occurrence of a specified value in a string.
+    This method returns -1 if the value to search for never occurs.
+    */
   }
 
   getUser(): Observable<any> {
