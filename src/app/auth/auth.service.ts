@@ -158,6 +158,11 @@ export class AuthService {
     if (user) user.isAdmin = (user.roles.indexOf('admin') > -1);
     this.$userSource.next(user);
     (<any>window).user = user;
+    /*window object in javascript
+    A global variable, window , representing the window in which the script is running, is exposed to JavaScript code. 
+    The Window interface is home to a variety of functions, namespaces, objects, and constructors which are not necessarily 
+    directly associated with the concept of a user interface window.
+    */
     /*
     The indexOf() method returns the position of the first occurrence of a specified value in a string.
     This method returns -1 if the value to search for never occurs.
