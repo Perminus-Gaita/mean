@@ -3,6 +3,21 @@ import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
+/* OBSERVABLES, OBSERVERS & SUBSCRIPTIONS 
+An Observable is a wrapper around some data source(stream of values). It is often used with asynchronous data though not limited to it.
+An Observer is there to execute some code whenever we receive a new value, an error or when the observable says it's done. The Observer
+is connected to an obervable through a subscription.
+
+Subscription basically means that with the subscribe method we tell an observable that a particular observer is listening to the
+value it emits. The observer implements up to three methods: next() error() and complete().
+
+The next() method will be called by the Observable whenever a new value is emitted. The eeror() method will be called whenever
+the observable throws an error, and the complete method will be called when the observable is done emiting.(some observables
+will never finish e.g one wrappwd wround a  button click)
+
+The subscribe method takes two possible list of arguements. Either a list of functions or a single object with the three 
+observer functions.
+*/
 /*BehaviorSubject is a type of subject, a subject is a special type of observable so you can subscribe to messages
 like any other observable. The unique features of BehaviorSubject are:
 
@@ -151,6 +166,13 @@ export class AuthService {
 
   getUser(): Observable<any> {
     return this.$userSource.asObservable();
+    /*When to use asObservable() in rxjs?
+    As per docs:
+    An observable sequence that hides the identity of the source sequence.
+    It is used when you don't want to leak the "observer-side" of a Subject out of your API. 
+    (Basically to prevent leaky abstraction).
+    From: https://stackoverflow.com/questions/36986548/when-to-use-asobservable-in-rxjs
+    */
   }
 
   me(): Observable<any> {
